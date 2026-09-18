@@ -1,0 +1,15 @@
+name: web-serper
+version: 0.1.0
+description: "Serper (google.serper.dev) — Google Search results via the Serper API. Search-only; pair with Firecrawl/Tavily/Exa/Parallel for web_extract."
+author: Avery Pelle
+license: MIT
+homepage: https://github.com/averypelle/serper-hermes-plugin
+tags: [web, search, serper, google]
+kind: backend
+provides_web_providers:
+  - serper
+requires_env:
+  - name: SERPER_API_KEY
+    description: "Serper API key — sign up at https://serper.dev (2,500 free queries on signup)."
+    url: "https://serper.dev/api-key"
+    secret: true
