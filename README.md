@@ -40,6 +40,8 @@ hermes setup                 # should report "✅ Web Search & Extract (serper)"
 
 ## Optional configuration
 
+Support any Serper.dev-compatible endpoint (like litescrape.com, serpbase.dev, serpensapi.org, and others). Set `SERPER_BASE_URL` to the provider base URL (without `/search`) and `SERPER_API_KEY` to a key issued by that provider. The default base URL is `https://google.serper.dev`.
+
 Extra knobs, all via environment variables (no config schema needed):
 
 | Env var          | Purpose                                    | Example |

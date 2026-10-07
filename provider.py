@@ -19,7 +19,6 @@ from agent.web_search_provider import WebSearchProvider, get_provider_env
 
 logger = logging.getLogger(__name__)
 
-_SERPER_ENDPOINT = "https://google.serper.dev/search"
 _DEFAULT_TIMEOUT = 15
 # Serper accepts num up to 100; clamp defensively.
 _MAX_LIMIT = 100
@@ -66,7 +65,7 @@ class SerperWebSearchProvider(WebSearchProvider):
             payload = json.dumps(body).encode("utf-8")
 
         req = urlrequest.Request(
-            _SERPER_ENDPOINT,
+            (get_provider_env("SERPER_BASE_URL") or "https://google.serper.dev").rstrip("/") + "/search",
             data=payload,
             headers={
                 "X-API-KEY": api_key,
